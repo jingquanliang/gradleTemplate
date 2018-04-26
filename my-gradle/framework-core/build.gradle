@@ -1,0 +1,27 @@
+
+mainClassName="hello.Application"
+
+dependencies {
+    compile project(':framework-dao')
+}
+
+
+bootJar {
+    baseName = 'gs-spring-boot'
+    version =  '0.1.0'
+}
+
+jar {
+
+    baseName = 'gs-gradle'
+    version =  '0.1.0'
+
+    // from {
+    //     configurations.compile.collect {
+    //      it.isDirectory() ? it : zipTree(it)
+    //     }
+    // }
+    manifest {
+        attributes 'Main-Class': 'hello.Application'
+    }
+}
